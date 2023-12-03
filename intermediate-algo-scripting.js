@@ -62,3 +62,52 @@ function destroyer2(...arr){
     return newArr;
 }
 // console.log(destroyer1([1, 2, 3, 1, 2, 3], 2, 3)); // [ 1, 1 ]
+
+// DAY 2
+// Wherefore art thou
+function whatIsInAName(collection, source) {
+    // create new array
+    const newArr = [];
+    // create array for boolean values
+    let boolArr = [];
+    
+    // for loop to check every element of array
+    // the elements are object
+    for(let i = 0; i < collection.length; i++){
+        // use for in loop to check every property of source object
+        for(const prop in source){
+            // condition to return boolean value
+            // if the collection property value matches to the source property value
+            // push boolean for every property
+            boolArr.push(collection[i][prop] == source[prop]);
+        }
+        // if no false element in boolArr, push object in the new array
+        if(!boolArr.includes(false)){
+            newArr.push(collection[i])
+        }
+        // empty boolArr for next loop for next object
+        boolArr = [];
+    }
+    return newArr;
+}
+  
+// console.log(whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" }));
+// [ { first: 'Tybalt', last: 'Capulet' } ]
+
+// console.log(whatIsInAName([{ "apple": 1, "bat": 2 }, { "bat": 2 }, { "apple": 1, "bat": 2, "cookie": 2 }], { "apple": 1, "bat": 2 })); 
+// [ { apple: 1, bat: 2 }, { apple: 1, bat: 2, cookie: 2 } ]
+
+// Spinal Tap Case is lower case words joined by dashes
+function spinalCase(str) {
+    // put space between lowercase letter and uppercase letter
+    str = str.replace(/([a-z])([A-Z])/g, "$1 $2");
+    // replace whitespaces and underscores with "-"
+    str = str.replace(/\s+|_/g, "-").toLowerCase();
+
+    return str 
+}
+// console.log(spinalCase('This Is Spinal Tap')); // this-is-spinal-tap
+// console.log(spinalCase("The_Andy_Griffith_Show")); // the-andy-griffith-show
+console.log(spinalCase("AllThe-small Things"));
+  
+  
