@@ -160,3 +160,58 @@ function myReplace(str, before, after) {
 
 // console.log(myReplace("He is Sleeping on the couch", "Sleeping", "sitting"));
 // He is Sitting on the couch
+
+// DNA or Deoxyrebonucleic Acid
+// Pairs of DNA strands consist of nucleobase pair represented by the characters AT and CG
+// which form building blocks of DNA double helix
+function pairElement(str) {
+    const newArr = []
+    str = str.split("")
+    for(let i in str){
+      // str[i]
+      switch(str[i]){
+        case "C":
+          newArr.push(["C", "G"]);
+          break;
+        case "G":
+          newArr.push(["G", "C"]);
+          break;
+        case "A":
+          newArr.push(["A", "T"]);
+          break;
+        case "T":
+          newArr.push(["T", "A"]);
+          break;
+      }
+    }
+    return newArr;
+}
+// console.log(pairElement("GCG")); // [ [ 'G', 'C' ], [ 'C', 'G' ], [ 'G', 'C' ] ]
+// console.log(pairElement("TTGAG"));
+// [ [ 'T', 'A' ], [ 'T', 'A' ], [ 'G', 'C' ], [ 'A', 'T' ], [ 'G', 'C' ] ]
+
+function fearNotLetter(str) {
+    let alphabet = "abcdefghijklmnopqrstuvwxyz";
+    // find the starting letter and slice the alphabet based on the first letter of str value
+    for(let i in alphabet){
+      if(str[0] === alphabet[i]){
+        alphabet = alphabet.slice(i);
+      }
+    }
+    // if not alphabet length is not equal to str length
+    if(alphabet.length !== str.length){
+      // find the missing letter
+      for(let j in alphabet){
+        if((alphabet[j] === str[j]) === false){
+          str = alphabet[j]
+          break;
+        }
+      }
+    }else{
+      str = undefined;
+    }
+    return str;
+  }  
+//   console.log(fearNotLetter("abce")); // d
+// console.log(fearNotLetter("stvwx")); // u
+//   console.log(fearNotLetter("abcdefghijklmnopqrstuvwxyz")); // undefined 
