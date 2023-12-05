@@ -161,9 +161,10 @@ function myReplace(str, before, after) {
 // console.log(myReplace("He is Sleeping on the couch", "Sleeping", "sitting"));
 // He is Sitting on the couch
 
+// DAY 4
 // DNA or Deoxyrebonucleic Acid
-// Pairs of DNA strands consist of nucleobase pair represented by the characters AT and CG
-// which form building blocks of DNA double helix
+// Pairs of DNA strands consist of nucleobase pair represented by the characters 
+// AT and CG which form building blocks of DNA double helix
 function pairElement(str) {
     const newArr = []
     str = str.split("")
@@ -212,6 +213,6 @@ function fearNotLetter(str) {
     }
     return str;
   }  
-//   console.log(fearNotLetter("abce")); // d
+// console.log(fearNotLetter("abce")); // d
 // console.log(fearNotLetter("stvwx")); // u
-//   console.log(fearNotLetter("abcdefghijklmnopqrstuvwxyz")); // undefined 
+// console.log(fearNotLetter("abcdefghijklmnopqrstuvwxyz")); // undefined 
