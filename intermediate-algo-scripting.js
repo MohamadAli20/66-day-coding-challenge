@@ -216,3 +216,57 @@ function fearNotLetter(str) {
 // console.log(fearNotLetter("abce")); // d
 // console.log(fearNotLetter("stvwx")); // u
 // console.log(fearNotLetter("abcdefghijklmnopqrstuvwxyz")); // undefined 
+
+// DAY 5
+// Sorted union, return an array and there should not be a duplicated element
+function uniteUnique(...arr) {
+  // merge all the arrays
+  let mergeArr = [].concat(...arr)
+
+  // check if the elements of mergeArr exist in the newArr
+  let newArr = [];
+  for(let i = 0; i < mergeArr.length; i++){
+    // if not exist, push the current element in the newArr
+    if(!newArr.includes(mergeArr[i])){
+      newArr.push(mergeArr[i])
+    }
+  }
+  return newArr;
+}
+
+// console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1])); // [ 1, 3, 2, 5, 4 ]
+// console.log(uniteUnique([1, 3, 2], [5, 4], [5, 6])); // [ 1, 3, 2, 5, 4, 6 ]
+// console.log(uniteUnique([1, 3, 2, 3], [5, 2, 1, 4], [2, 1])); // [ 1, 3, 2, 5, 4 ]
+
+// Convert to HTML entities
+function convertHTML(str) {
+  // str to array
+  let arr = str.split("");
+  // find the special character 
+  for(let i in arr){
+    // change to corresponding html entity the current arr[i] or special character
+    switch(arr[i]){
+      case "&":
+        arr[i] = "&amp;"
+        break;
+      case "<":
+        arr[i] = "&lt;";
+        break;
+      case ">":
+        arr[i] = "&gt;";
+        break;
+      case "\"":
+        arr[i] = "&quot;";
+        break;
+      case "'":
+        arr[i] = "&apos;";
+        break;
+    }
+  }
+  arr = arr.join("")
+  return arr;
+}
+
+// console.log(convertHTML("Dolce & Gabbana")); // Dolce &amp; Gabbana
+// console.log(convertHTML("Hamburgers < Pizza < Tacos")); // Hamburgers &lt; Pizza &lt; Tacos
+// console.log(convertHTML("<>")); // &lt;&gt;
