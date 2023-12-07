@@ -298,3 +298,31 @@ function sumFibs(num) {
 }
 // console.log(sumFibs(10)); // 10
 // console.log(sumFibs(4000000)) // 4613732
+
+function sumPrimes(num) {
+  let primeNumber = [];
+  let flag = 0;
+  // i for first number
+  for(let i = 1; i <= num; i++){
+    // j for second number
+    for(let j = 1; j <= i; j++){
+      // count flag for each element
+      // remember prime number has only 2 divisor meaning 2 flags
+      if((i % j) === 0){
+        flag++;
+      }
+    }
+    // check if 2 flags then it is prime number
+    if(flag === 2){
+      primeNumber.push(i);
+    }
+    // set to 0 for next number
+    flag = 0;
+  }
+  // get the total sum
+  let total = primeNumber.reduce((accumulator, number) => accumulator + number);
+  return total;
+}
+
+// console.log(sumPrimes(10)) // should return 17
+console.log(sumPrimes(977)) // should return 73156
