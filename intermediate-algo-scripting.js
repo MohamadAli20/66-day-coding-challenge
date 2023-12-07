@@ -299,6 +299,8 @@ function sumFibs(num) {
 // console.log(sumFibs(10)); // 10
 // console.log(sumFibs(4000000)) // 4613732
 
+// get the sum of all prime numbers
+// A prime number is a whole number greater than 1 with exactly two divisors: 1 and itself
 function sumPrimes(num) {
   let primeNumber = [];
   let flag = 0;
