@@ -270,7 +270,7 @@ function convertHTML(str) {
 // console.log(convertHTML("Hamburgers < Pizza < Tacos")); // Hamburgers &lt; Pizza &lt; Tacos
 // console.log(convertHTML("<>")); // &lt;&gt;
 
-// DAY
+// DAY 6
 // Sum All Odd Fibonacci Numbers
 function sumFibs(num) {
   // fibonacci starts with 0 and followed by 1
@@ -325,4 +325,4 @@ function sumPrimes(num) {
 }
 
 // console.log(sumPrimes(10)) // should return 17
-console.log(sumPrimes(977)) // should return 73156
+// console.log(sumPrimes(977)) // should return 73156
