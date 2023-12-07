@@ -266,7 +266,35 @@ function convertHTML(str) {
   arr = arr.join("")
   return arr;
 }
-
 // console.log(convertHTML("Dolce & Gabbana")); // Dolce &amp; Gabbana
 // console.log(convertHTML("Hamburgers < Pizza < Tacos")); // Hamburgers &lt; Pizza &lt; Tacos
 // console.log(convertHTML("<>")); // &lt;&gt;
+
+// DAY
+// Sum All Odd Fibonacci Numbers
+function sumFibs(num) {
+  // fibonacci starts with 0 and followed by 1
+  let fibonacci = [0, 1]
+  // index for second addend
+  let j = 1;
+  // loop to create fibonacci sequence
+  for(let i = 0; i <= num - 2; i++){
+    // get the sum of first addend and second addend
+    let currentSum = fibonacci[i] + fibonacci[j]
+    // if current sum is greater the given num, break the loop
+    if(currentSum > num) break;
+    // if not push the current sum to the fibonacci
+    fibonacci.push(currentSum)
+    j++;
+  }
+  let total = 0;
+  for(let j in fibonacci){
+    // sum up all the odd numbers
+    if((fibonacci[j] % 2) === 1){
+      total += fibonacci[j]
+    }
+  }
+  return total;
+}
+// console.log(sumFibs(10)); // 10
+// console.log(sumFibs(4000000)) // 4613732
