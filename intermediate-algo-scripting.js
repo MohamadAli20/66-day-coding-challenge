@@ -376,3 +376,16 @@ function dropElements(arr, func) {
 // console.log(dropElements([1, 2, 3, 4], function(n) {return n < 3; })); // [ 1, 2]
 // console.log(dropElements([1, 2, 3, 4], function(n) {return n >= 3;})); // [ 3, 4 ]
 // console.log(dropElements([0, 1, 0, 1], function(n) {return n === 1;})); // [ 1, 0, 1 ]
+
+// Other solution
+function dropElements(arr, func) {
+  // Use while loop to drop elements until the condition is met
+  while (arr.length > 0 && !func(arr[0])) {
+    arr.shift();
+  }
+
+  // Return the remaining array
+  return arr;
+}
+
+// console.log(dropElements([0, 1, 0, 1], function(n) {return n === 1;}));
