@@ -328,3 +328,51 @@ function sumPrimes(num) {
 
 // console.log(sumPrimes(10)) // should return 17
 // console.log(sumPrimes(977)) // should return 73156
+
+// DAY 7
+// Study this again
+function smallestCommons(arr) {
+  // if first elem is greater than second elem
+  if(arr[0] > arr[1]){
+    let c = arr[0]; // to sway value of first and second elem
+    arr[0] = arr[1];
+    arr[1] = c;
+  }
+  // array of range of numbers
+  const number = []
+  // lop to push range of number to an array
+  for(let i = arr[0]; i <= arr[1]; i++){
+    number.push(i);
+  }
+  // get the greatest common multiple
+  function gcd(a, b) {
+    return b === 0 ? a : gcd(b, a % b);
+  }
+  // loop through the array to get the lowest common multiple
+  let lcm = number.reduce((acc, val) => (acc * val) / gcd(acc, val), 1);
+
+  return lcm
+}
+
+// console.log(smallestCommons([1,5])); // 60
+// console.log(smallestCommons([2, 10])) // 2520
+
+// Drop it
+// Given the array arr, iterate through and 
+// remove each element starting from the first element (the 0 index) 
+// until the function func returns true when the iterated element is passed through it.
+function dropElements(arr, func) {
+  let newArr = [];
+  let found = false;
+
+  arr.forEach(item => {
+    if (func(item) || found) {
+      newArr.push(item);
+      found = true;
+    }
+  });
+  return newArr;
+}
+// console.log(dropElements([1, 2, 3, 4], function(n) {return n < 3; })); // [ 1, 2]
+// console.log(dropElements([1, 2, 3, 4], function(n) {return n >= 3;})); // [ 3, 4 ]
+// console.log(dropElements([0, 1, 0, 1], function(n) {return n === 1;})); // [ 1, 0, 1 ]
