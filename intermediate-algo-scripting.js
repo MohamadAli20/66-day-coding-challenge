@@ -389,3 +389,58 @@ function dropElements(arr, func) {
 }
 
 // console.log(dropElements([0, 1, 0, 1], function(n) {return n === 1;}));
+
+// DAY 8
+// Flatten a nested array. You must account for varying levels of nesting.
+function steamrollArray(arr){
+  let newArr = [];
+  // 1st level
+  for(let i = 0; i < arr.length; i++){
+    // if element is not array, push the element to a new array
+    if(Array.isArray(arr[i]) === false){
+      newArr.push(arr[i]);
+    }else if(Array.isArray(arr[i]) === true){ // if element is array
+      // 2nd level
+      for(let j in arr[i]){
+        if(typeof arr[i][j] === 'string' || typeof arr[i][j] === 'number'){
+      newArr.push(arr[i][j]);
+        }else if(Array.isArray(arr[i][j]) === true){
+          // 3rd level
+          for(let k in arr[i][j]){
+            if(typeof arr[i][j][k] === 'string' || typeof arr[i][j][k] === 'number'){
+          newArr.push(arr[i][j][k]);
+            }else if(Array.isArray(arr[i][j][k]) === true){
+              // 4th level
+              for(let l in arr[i][j][k]){
+                if(typeof arr[i][j][k][l] === 'string' || typeof arr[i][j][k][l] === 'number'){
+              newArr.push(arr[i][j][k][l]);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  return newArr;
+}
+// console.log(steamrollArray([1, [2], [3, [[4]]]])); // [ 1, 2, 3, 4 ]
+// console.log(steamrollArray([1, {}, [3, [[4]]]])); // [ 1, {}, 3, 4 ]
+// console.log(steamrollArray([[["a"]], [["b"]]])); // [ 'a', 'b' ]
+
+// Binaries to Words
+function binaryAgent(str) {
+  // split into array
+  let binArr = str.split(' ');
+  // String.fromCharCode convert unicode to letter
+  // parseInt takes 2 params, the string converts to integer, and 
+  // radix, and converts the integer to unicode
+  let result = binArr.map(bin => String.fromCharCode(parseInt(bin, 2))).join('');
+
+  return result;
+}
+// console.log(binaryAgent("01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111"));
+// Aren't bonfires fun!?
+
+// console.log(binaryAgent("01001001 00100000 01101100 01101111 01110110 01100101 00100000 01000110 01110010 01100101 01100101 01000011 01101111 01100100 01100101 01000011 01100001 01101101 01110000 00100001"));
+// I love FreeCodeCamp!
