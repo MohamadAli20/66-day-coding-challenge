@@ -446,3 +446,27 @@ function binaryAgent(str) {
 // I love FreeCodeCamp!
 
 // DAY 9
+function truthCheck(collection, pre) {
+  let boolVal = [];
+ 
+  for(let i in collection){
+    // get the value
+    let currentPre = collection[i][pre];
+    // if falsy value
+    if(!currentPre){
+      // push false to the array
+      boolVal.push(false);
+    }else{
+      // else push true
+      boolVal.push(true);
+    }
+  }
+  // use every method to check if all elements are true
+  // return true all elements passed the test and false if not
+  let result = boolVal.every(item => item === true);
+  return result;
+}
+
+// console.log(truthCheck([{name: "Quincy", role: "Founder", isBot: false}, {name: "Naomi", role: "", isBot: false}, {name: "Camperbot", role: "Bot", isBot: true}], "isBot")); // returns false
+// console.log(truthCheck([{name: "Pikachu", number: 25, caught: 3}, {name: "Togepi", number: 175, caught: 1}, {name: "MissingNo", number: NaN, caught: 0}], "number")); // it should return false
+// console.log(truthCheck([{name: "Quincy", role: "Founder", isBot: false}, {name: "Naomi", role: "", isBot: false}, {name: "Camperbot", role: "Bot", isBot: true}], "name")); // returns true
