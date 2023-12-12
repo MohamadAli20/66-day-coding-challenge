@@ -470,3 +470,35 @@ function truthCheck(collection, pre) {
 // console.log(truthCheck([{name: "Quincy", role: "Founder", isBot: false}, {name: "Naomi", role: "", isBot: false}, {name: "Camperbot", role: "Bot", isBot: true}], "isBot")); // returns false
 // console.log(truthCheck([{name: "Pikachu", number: 25, caught: 3}, {name: "Togepi", number: 175, caught: 1}, {name: "MissingNo", number: NaN, caught: 0}], "number")); // it should return false
 // console.log(truthCheck([{name: "Quincy", role: "Founder", isBot: false}, {name: "Naomi", role: "", isBot: false}, {name: "Camperbot", role: "Bot", isBot: true}], "name")); // returns true
+
+// DAY 10
+// function that sums two arguments together. 
+// If only one argument is provided, then return a function.
+// If either argument isn't a valid number, return undefined.
+function addTogether(x, y) {
+  let typeX = typeof x;
+  let typeY = typeof y;
+  // if argument length is 2 and numbers
+  if(arguments.length === 2 && typeX === 'number' && typeY === 'number'){
+      return x + y; 
+  }
+  // if argument length is 1 and a number
+  else if(arguments.length == 1 && typeX === 'number'){
+    return function (y){
+      // if y is integer
+      if(Number.isInteger(y) === true){
+        return x + y;
+      }
+      // else return function
+    }
+  }
+  // return undefined as the default
+  return undefined; 
+}
+
+// console.log(addTogether(5, 7)); // 12
+// console.log(addTogether(5)(7)); // 12
+// console.log(addTogether(2)); // [Function]
+// console.log(addTogether("https://www.youtube.com/watch?v=dQw4w9WgXcQ")); // undefined
+
+
