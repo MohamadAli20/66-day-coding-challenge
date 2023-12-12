@@ -542,7 +542,7 @@ person1.setFullName('Haskell', 'Curry');
 // console.log(person1.getFirstName()); // Haskell
 // console.log(person1.getLastName()); //Curry
 
-// What's up? I'm doing fine. I wish you're fine too.
+// What's up? I'm fine. I wish you're fine too.
 // Thank you so much for checking me up, I wish you all the best.
 // Goodluck!
 // 'Work hard in silence, let your success be your noise'.
