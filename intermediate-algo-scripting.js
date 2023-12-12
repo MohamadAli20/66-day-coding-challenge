@@ -501,4 +501,44 @@ function addTogether(x, y) {
 // console.log(addTogether(2)); // [Function]
 // console.log(addTogether("https://www.youtube.com/watch?v=dQw4w9WgXcQ")); // undefined
 
+const Person = function(first, last) {
+  // assign to new local variables
+  let firstName = first;
+  let lastName = last;
+
+  this.getFirstName = function(){
+    return firstName;
+  }
+  this.getLastName = function(){
+    return lastName;
+  }
+  this.getFullName = function() {
+    return firstName + " " + lastName;
+  };
+  this.setFirstName = function(first){
+    // reassign value of firstName, replace by current valuue of first
+    return firstName = first;
+  }
+  this.setLastName = function(last){
+    // reassign value of lastName, replace by current valuue of last
+    return lastName = last;
+  }
+  this.setFullName = function(first, last){
+    // reassigning the value of firstName and lastName
+    return firstName = first, lastName = last
+  }
+};
+
+let person1 = new Person('Bob', 'Ross');
+console.log(person1.getFirstName()); // Bob
+// console.log(person1.getLastName()); // Ross
+// console.log(person1.getFullName()); // Bob Ross
+// console.log(person1.setFirstName('Haskell')); // Haskell Ross
+// console.log(person1.getFullName()); // Bob Ross
+// console.log(person1.setLastName('Curry')); // Bob Curry
+
+// set new names
+person1.setFullName('Haskell', 'Curry');
+// console.log(person1.getFirstName()); // Haskell
+// console.log(person1.getLastName()); //Curry
 
