@@ -17,10 +17,8 @@ function palindrome(str) {
 // console.log(palindrome("A man, a plan, a canal. Panama")); // true
   
 // Caesars Cipher
-
 function rot13(str) {
   let arr = str.split('');
-
   let cipher = {
     'A':'N',
     'B':'O',
@@ -49,7 +47,6 @@ function rot13(str) {
   // join
   return arr.join("");
 }
-
 // console.log(rot13("SERR PBQR PNZC")); // FREE CODE CAMP
 // console.log(rot13("SERR CVMMN!")); //  FREE PIZZA!
 // console.log(rot13("SERR YBIR?")); // FREE LOVE?
