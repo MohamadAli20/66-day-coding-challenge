@@ -542,6 +542,31 @@ person1.setFullName('Haskell', 'Curry');
 // console.log(person1.getFirstName()); // Haskell
 // console.log(person1.getLastName()); //Curry
 
+// DAY 11
+function orbitalPeriod(arr) {
+  const GM = 398600.4418;
+  const earthRadius = 6367.4447;
+  // iterate
+  for(let i in arr){
+    const avgAlt = arr[i].avgAlt;
+    // get a, sum of Earth radius and Average altitude
+    const a = earthRadius+avgAlt;
+    // get the orbital period
+    const t = Math.round(2*Math.PI*Math.sqrt(a**3/GM));
+    // delete avgAlt
+    delete arr[i].avgAlt;
+    // add orbitalPeriod property
+    arr[i].orbitalPeriod = t
+  }
+  return arr;
+} 
+// console.log(orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}])); // [ { name: 'sputnik', orbitalPeriod: 86400 } ]
+// console.log(orbitalPeriod([{name: "iss", avgAlt: 413.6}, {name: "hubble", avgAlt: 556.7}, {name: "moon", avgAlt: 378632.553}])); 
+// [ { name: 'iss', orbitalPeriod: 5557 },
+// { name: 'hubble', orbitalPeriod: 5734 },
+// { name: 'moon', orbitalPeriod: 2377399 } ]
+
+
 // What's up? I'm fine. I wish you're fine too.
 // Thank you so much for checking me up, I wish you all the best.
 // Goodluck!
