@@ -63,7 +63,7 @@ function rot13(str) {
 // 1 555 555 5555
 // This is not finished yet, pattern should be fixed to return the correct boolean
 function telephoneCheck(str) {
-  let result = false;s
+  let result = false;
   // match numbers only and get the length
   let lengthNum = str.match(/\d+/g).join('').length;
   if(lengthNum === 10){ // meaning without 1 at the beginning    
@@ -94,21 +94,21 @@ function telephoneCheck(str) {
 }
 // Tests
 // console.log(telephoneCheck("555-555-5555")) // should return a boolean.
-console.log(telephoneCheck("1 555-555-5555")) // should return true.
-console.log(telephoneCheck("1 (555) 555-5555")) //should return true.
+// console.log(telephoneCheck("1 555-555-5555")) // should return true.
+// console.log(telephoneCheck("1 (555) 555-5555")) //should return true.
 // console.log(telephoneCheck("5555555555")); //should return true.
 // console.log(telephoneCheck("555-555-5555")); //should return true.
 // console.log(telephoneCheck("(555)555-5555")); //should return true.
-console.log(telephoneCheck("1(555)555-5555")); //should return true.
+// console.log(telephoneCheck("1(555)555-5555")); //should return true.
 // console.log(telephoneCheck("555-5555")); //should return false.
 // console.log(telephoneCheck("5555555")); //should return false.
-console.log(telephoneCheck("1 555)555-5555")) //should return false.
-console.log(telephoneCheck("1 555 555 5555")) //should return true.
-console.log(telephoneCheck("1 456 789 4444")); //should return true.
+// console.log(telephoneCheck("1 555)555-5555")) //should return false.
+// console.log(telephoneCheck("1 555 555 5555")) //should return true.
+// console.log(telephoneCheck("1 456 789 4444")); //should return true.
 // Waiting:telephoneCheck("123**&!!asdf#") //should return false.
 // console.log(telephoneCheck("55555555")) //should return false.
 // console.log(telephoneCheck("(6054756961)")); //should return false.
-console.log(telephoneCheck("2 (757) 622-7382")); //should return false.
+// console.log(telephoneCheck("2 (757) 622-7382")); //should return false.
 // Waiting:telephoneCheck("0 (757) 622-7382") //should return false.
 // Waiting:telephoneCheck("-1 (757) 622-7382") //should return false.
 // Waiting:telephoneCheck("2 757 622-7382") //should return false.
@@ -120,8 +120,8 @@ console.log(telephoneCheck("2 (757) 622-7382")); //should return false.
 // Waiting:telephoneCheck("555)-555-5555") should return false.
 // Waiting:telephoneCheck("(555-555-5555") should return false.
 // Waiting:telephoneCheck("(555)5(55?)-5555") should return false.
-console.log(telephoneCheck("55 55-55-555-5")) //should return false.
-console.log(telephoneCheck("11 555-555-5555")) //should return false
+// console.log(telephoneCheck("55 55-55-555-5")) //should return false.
+// console.log(telephoneCheck("11 555-555-5555")) //should return false
 
 // Roman Numeral Converter
 // Convert the given number into a roman numeral.
@@ -141,32 +141,29 @@ console.log(telephoneCheck("11 555-555-5555")) //should return false
 // IV	4
 // I	1
 // All roman numerals answers should be provided in upper-case.
+function convertToRoman(num) {
+  let romanNumerals  = ['M','CM','D','CD','C','XC','L','XL','X','IX','V','IV','I'];
+  let arabicNumerals = [1000,900,500,400,100,90,50,40,10,9,5,4,1];
+  let result = '';
+  // loop through roman numerals from the biggest number to lowest
+  for(let i = 0; i < romanNumerals.length; i++){
+    // loop while num is greater or equal to arabic numerals
+    while(num >= arabicNumerals[i]){
+      // subtract the current arabic numeral from current num value
+      // Example: num is 11 so, 10 - 10 = 1 
+      num -= arabicNumerals[i];
+      // add current roman numeral to the result
+      // X is equivalent of 10 in roman, add X to the result
+      result += romanNumerals[i];
+      // continue until equivalent of 1 is added to result which I
+    }
+  }
+  return result; // XI
+}
 
-// function convertToRoman(num) {
-//   let roman = {
-//     'M':1000,
-//     'CM':900,
-//     'D':500,
-//     'CD':400,
-//     'C':100,
-//     'XC':90,
-//     'L':50,
-//     'XL':40,
-//     'X':10,
-//     'IX':9,
-//     'V':5,
-//     'IV':4,
-//     'I':1
-//   }
-//   if(num >= 1 && num <= 3){
-    
-//   }
-
-
-//   return num;
-// }
-
-// convertToRoman(36);
+// console.log(convertToRoman(3)); // III
+// console.log(convertToRoman(12)); // XII
+// console.log(convertToRoman(3999)); // MMMCMXCIX
 
 // Tests
 // Waiting:convertToRoman(2) should return the string II.
