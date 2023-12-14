@@ -63,26 +63,135 @@ function rot13(str) {
 // 1 555 555 5555
 // This is not finished yet, pattern should be fixed to return the correct boolean
 function telephoneCheck(str) {
-  let result;
-  if(str.length > 9){
-    // let regex = 
-    // result = /[\d-\s]*([(]+\d+[)]+|\d+)[-\s\d]+/.test(str);
-    result = str.match(/[1\s]*([(]+\d+[)]|-*\s*\d)+-*\s*\d+/g);
-    
-    if(result.join("") == str){
-      result = true;
-    }else{
+  let result = false;s
+  // match numbers only and get the length
+  let lengthNum = str.match(/\d+/g).join('').length;
+  if(lengthNum === 10){ // meaning without 1 at the beginning    
+    result = str.match(/([(]+\d\d\d[)]\s*|\d\d\d[-\s]*)\d\d\d[-\s]*\d\d\d\d/g);
+
+    if(result !== null){
+      if(result.join('') === str){
+        result = true;
+      }else{
+        result = false;
+      }
+    }else{ // if result equal to null
       result = false;
     }
-  }else{
-    result = false;
+  }else if(lengthNum === 11){ // meaning with 1 at the beginning
+    result = str.match(/(1)\s*([(]+\d\d\d[)]\s*|\d\d\d[-\s]*)\d\d\d[-\s]*\d\d\d\d/g);
+    if(result !== null){
+      if(result.join('') === str){
+        result = true;
+      }else{
+        result = false;
+      }
+    }else{ // if result equal to null
+      result = false;
+    }
   }
   return result; 
 }
-// console.log(telephoneCheck("555-555-5555")); // true
-// console.log(telephoneCheck("1 555-555-5555")); // true  
-// console.log(telephoneCheck("1 (555) 555-5555")); // true
-// console.log(telephoneCheck("5555555555")); // true
-// console.log(telephoneCheck("1 555)555-5555")); // false
-// console.log(telephoneCheck("555-5555")); // false
-// console.log(telephoneCheck("-1 (757) 622-7382"))
+// Tests
+// console.log(telephoneCheck("555-555-5555")) // should return a boolean.
+console.log(telephoneCheck("1 555-555-5555")) // should return true.
+console.log(telephoneCheck("1 (555) 555-5555")) //should return true.
+// console.log(telephoneCheck("5555555555")); //should return true.
+// console.log(telephoneCheck("555-555-5555")); //should return true.
+// console.log(telephoneCheck("(555)555-5555")); //should return true.
+console.log(telephoneCheck("1(555)555-5555")); //should return true.
+// console.log(telephoneCheck("555-5555")); //should return false.
+// console.log(telephoneCheck("5555555")); //should return false.
+console.log(telephoneCheck("1 555)555-5555")) //should return false.
+console.log(telephoneCheck("1 555 555 5555")) //should return true.
+console.log(telephoneCheck("1 456 789 4444")); //should return true.
+// Waiting:telephoneCheck("123**&!!asdf#") //should return false.
+// console.log(telephoneCheck("55555555")) //should return false.
+// console.log(telephoneCheck("(6054756961)")); //should return false.
+console.log(telephoneCheck("2 (757) 622-7382")); //should return false.
+// Waiting:telephoneCheck("0 (757) 622-7382") //should return false.
+// Waiting:telephoneCheck("-1 (757) 622-7382") //should return false.
+// Waiting:telephoneCheck("2 757 622-7382") //should return false.
+// console.log(telephoneCheck("10 (757) 622-7382")) // should return false.
+// console.log(telephoneCheck("27576227382")) //should return false.
+// Waiting:telephoneCheck("(275)76227382") should return false.
+// Waiting:telephoneCheck("2(757)6227382") should return false.
+// Waiting:telephoneCheck("2(757)622-7382") should return false.
+// Waiting:telephoneCheck("555)-555-5555") should return false.
+// Waiting:telephoneCheck("(555-555-5555") should return false.
+// Waiting:telephoneCheck("(555)5(55?)-5555") should return false.
+console.log(telephoneCheck("55 55-55-555-5")) //should return false.
+console.log(telephoneCheck("11 555-555-5555")) //should return false
+
+// Roman Numeral Converter
+// Convert the given number into a roman numeral.
+
+// Roman numerals	Arabic numerals
+// M	1000
+// CM	900
+// D	500
+// CD	400
+// C	100
+// XC	90
+// L	50
+// XL	40
+// X	10
+// IX	9
+// V	5
+// IV	4
+// I	1
+// All roman numerals answers should be provided in upper-case.
+
+// function convertToRoman(num) {
+//   let roman = {
+//     'M':1000,
+//     'CM':900,
+//     'D':500,
+//     'CD':400,
+//     'C':100,
+//     'XC':90,
+//     'L':50,
+//     'XL':40,
+//     'X':10,
+//     'IX':9,
+//     'V':5,
+//     'IV':4,
+//     'I':1
+//   }
+//   if(num >= 1 && num <= 3){
+    
+//   }
+
+
+//   return num;
+// }
+
+// convertToRoman(36);
+
+// Tests
+// Waiting:convertToRoman(2) should return the string II.
+// Waiting:convertToRoman(3) should return the string III.
+// Waiting:convertToRoman(4) should return the string IV.
+// Waiting:convertToRoman(5) should return the string V.
+// Waiting:convertToRoman(9) should return the string IX.
+// Waiting:convertToRoman(12) should return the string XII.
+// Waiting:convertToRoman(16) should return the string XVI.
+// Waiting:convertToRoman(29) should return the string XXIX.
+// Waiting:convertToRoman(44) should return the string XLIV.
+// Waiting:convertToRoman(45) should return the string XLV.
+// Waiting:convertToRoman(68) should return the string LXVIII
+// Waiting:convertToRoman(83) should return the string LXXXIII
+// Waiting:convertToRoman(97) should return the string XCVII
+// Waiting:convertToRoman(99) should return the string XCIX
+// Waiting:convertToRoman(400) should return the string CD
+// Waiting:convertToRoman(500) should return the string D
+// Waiting:convertToRoman(501) should return the string DI
+// Waiting:convertToRoman(649) should return the string DCXLIX
+// Waiting:convertToRoman(798) should return the string DCCXCVIII
+// Waiting:convertToRoman(891) should return the string DCCCXCI
+// Waiting:convertToRoman(1000) should return the string M
+// Waiting:convertToRoman(1004) should return the string MIV
+// Waiting:convertToRoman(1006) should return the string MVI
+// Waiting:convertToRoman(1023) should return the string MXXIII
+// Waiting:convertToRoman(2014) should return the string MMXIV
+// Waiting:convertToRoman(3999) should return the string MMMCMXCIX
