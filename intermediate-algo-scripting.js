@@ -444,3 +444,131 @@ function binaryAgent(str) {
 
 // console.log(binaryAgent("01001001 00100000 01101100 01101111 01110110 01100101 00100000 01000110 01110010 01100101 01100101 01000011 01101111 01100100 01100101 01000011 01100001 01101101 01110000 00100001"));
 // I love FreeCodeCamp!
+
+// DAY 9
+function truthCheck(collection, pre) {
+  let boolVal = [];
+ 
+  for(let i in collection){
+    // get the value
+    let currentPre = collection[i][pre];
+    // if falsy value
+    if(!currentPre){
+      // push false to the array
+      boolVal.push(false);
+    }else{
+      // else push true
+      boolVal.push(true);
+    }
+  }
+  // use every method to check if all elements are true
+  // return true all elements passed the test and false if not
+  let result = boolVal.every(item => item === true);
+  return result;
+}
+
+// console.log(truthCheck([{name: "Quincy", role: "Founder", isBot: false}, {name: "Naomi", role: "", isBot: false}, {name: "Camperbot", role: "Bot", isBot: true}], "isBot")); // returns false
+// console.log(truthCheck([{name: "Pikachu", number: 25, caught: 3}, {name: "Togepi", number: 175, caught: 1}, {name: "MissingNo", number: NaN, caught: 0}], "number")); // it should return false
+// console.log(truthCheck([{name: "Quincy", role: "Founder", isBot: false}, {name: "Naomi", role: "", isBot: false}, {name: "Camperbot", role: "Bot", isBot: true}], "name")); // returns true
+
+// DAY 10
+// function that sums two arguments together. 
+// If only one argument is provided, then return a function.
+// If either argument isn't a valid number, return undefined.
+function addTogether(x, y) {
+  let typeX = typeof x;
+  let typeY = typeof y;
+  // if argument length is 2 and numbers
+  if(arguments.length === 2 && typeX === 'number' && typeY === 'number'){
+      return x + y; 
+  }
+  // if argument length is 1 and a number
+  else if(arguments.length == 1 && typeX === 'number'){
+    return function (y){
+      // if y is integer
+      if(Number.isInteger(y) === true){
+        return x + y;
+      }
+      // else return function
+    }
+  }
+  // return undefined as the default
+  return undefined; 
+}
+
+// console.log(addTogether(5, 7)); // 12
+// console.log(addTogether(5)(7)); // 12
+// console.log(addTogether(2)); // [Function]
+// console.log(addTogether("https://www.youtube.com/watch?v=dQw4w9WgXcQ")); // undefined
+
+const Person = function(first, last) {
+  // assign to new local variables
+  let firstName = first;
+  let lastName = last;
+
+  this.getFirstName = function(){
+    return firstName;
+  }
+  this.getLastName = function(){
+    return lastName;
+  }
+  this.getFullName = function() {
+    return firstName + " " + lastName;
+  };
+  this.setFirstName = function(first){
+    // reassign value of firstName, replace by current valuue of first
+    return firstName = first;
+  }
+  this.setLastName = function(last){
+    // reassign value of lastName, replace by current valuue of last
+    return lastName = last;
+  }
+  this.setFullName = function(first, last){
+    // reassigning the value of firstName and lastName
+    return firstName = first, lastName = last
+  }
+};
+
+let person1 = new Person('Bob', 'Ross');
+console.log(person1.getFirstName()); // Bob
+// console.log(person1.getLastName()); // Ross
+// console.log(person1.getFullName()); // Bob Ross
+// console.log(person1.setFirstName('Haskell')); // Haskell Ross
+// console.log(person1.getFullName()); // Bob Ross
+// console.log(person1.setLastName('Curry')); // Bob Curry
+
+// set new names
+person1.setFullName('Haskell', 'Curry');
+// console.log(person1.getFirstName()); // Haskell
+// console.log(person1.getLastName()); //Curry
+
+// DAY 11
+function orbitalPeriod(arr) {
+  const GM = 398600.4418;
+  const earthRadius = 6367.4447;
+  // iterate
+  for(let i in arr){
+    const avgAlt = arr[i].avgAlt;
+    // get a, sum of Earth radius and Average altitude
+    const a = earthRadius+avgAlt;
+    // get the orbital period
+    const t = Math.round(2*Math.PI*Math.sqrt(a**3/GM));
+    // delete avgAlt
+    delete arr[i].avgAlt;
+    // add orbitalPeriod property
+    arr[i].orbitalPeriod = t
+  }
+  return arr;
+} 
+// console.log(orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}])); // [ { name: 'sputnik', orbitalPeriod: 86400 } ]
+// console.log(orbitalPeriod([{name: "iss", avgAlt: 413.6}, {name: "hubble", avgAlt: 556.7}, {name: "moon", avgAlt: 378632.553}])); 
+// [ { name: 'iss', orbitalPeriod: 5557 },
+// { name: 'hubble', orbitalPeriod: 5734 },
+// { name: 'moon', orbitalPeriod: 2377399 } ]
+
+
+// What's up? I'm fine. I wish you're fine too.
+// Thank you so much for checking me up, I wish you all the best.
+// Goodluck!
+// 'Work hard in silence, let your success be your noise'.
+
