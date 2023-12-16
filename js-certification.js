@@ -192,3 +192,68 @@ function convertToRoman(num) {
 // Waiting:convertToRoman(1023) should return the string MXXIII
 // Waiting:convertToRoman(2014) should return the string MMXIV
 // Waiting:convertToRoman(3999) should return the string MMMCMXCIX
+
+
+function checkCashRegister(price, cash, cid) {
+  const currencyUnit = {
+    "PENNY": 0.01,
+    "NICKEL": 0.05,
+    "DIME": 0.1,
+    "QUARTER": 0.25,
+    "ONE": 1,
+    "FIVE": 5,
+    "TEN": 10,
+    "TWENTY": 20,
+    "ONE HUNDRED": 100
+  };
+
+  let changeDue = cash - price;
+  let totalCID = 0;
+
+  // Calculate the total amount in the cash drawer (totalCID)
+  for (let i = 0; i < cid.length; i++) {
+    totalCID += cid[i][1];
+  }
+
+  totalCID = parseFloat(totalCID.toFixed(2)); // Fix floating-point precision issue
+
+  // Check if there is insufficient funds
+  if (changeDue > totalCID) {
+    return { status: "INSUFFICIENT_FUNDS", change: [] };
+  }
+
+  // Check if the cash drawer is closed
+  if (changeDue === totalCID) {
+    return { status: "CLOSED", change: cid };
+  }
+
+  // Calculate the change
+  let change = [];
+  for (let i = cid.length - 1; i >= 0; i--) {
+    const unit = currencyUnit[cid[i][0]];
+    const maxAvailable = cid[i][1];
+    const maxChange = Math.floor(maxAvailable / unit) * unit;
+    if (changeDue >= unit) {
+      let returned = 0;
+      while (changeDue >= unit && returned < maxChange) {
+        changeDue -= unit;
+        returned += unit;
+        changeDue = parseFloat(changeDue.toFixed(2));
+      }
+      change.push([cid[i][0], returned]);
+    }
+  }
+  // Check if there is not enough change
+  if (changeDue > 0) {
+    return { status: "INSUFFICIENT_FUNDS", change: [] };
+  }
+
+  return { status: "OPEN", change };
+}
+
+// Test cases
+// console.log(checkCashRegister(19.5, 20, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]));
+// console.log(checkCashRegister(3.26, 100, [["PENNY", 1.01], ["NICKEL", 2.05], ["DIME", 3.1], ["QUARTER", 4.25], ["ONE", 90], ["FIVE", 55], ["TEN", 20], ["TWENTY", 60], ["ONE HUNDRED", 100]]));
+// console.log(checkCashRegister(19.5, 20, [["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]));
+// console.log(checkCashRegister(19.5, 20, [["PENNY", 0.01], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 1], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]));
+// console.log(checkCashRegister(19.5, 20, [["PENNY", 0.5], ["NICKEL", 0], ["DIME", 0], ["QUARTER", 0], ["ONE", 0], ["FIVE", 0], ["TEN", 0], ["TWENTY", 0], ["ONE HUNDRED", 0]]));
