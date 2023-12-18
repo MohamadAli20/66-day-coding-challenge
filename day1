@@ -1,3 +1,4 @@
+// Object Oriented Programming
 // object, anything that we can describe or has properties like chair or dog
 let dog = {
     name: 'Browny',
