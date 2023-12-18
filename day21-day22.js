@@ -1,4 +1,4 @@
-// HACKER HERO TASKS
+// HACKER HERO TASK - INTRODUCTION
 // clean code
 // Example 1
 function sumAll(a, b){
