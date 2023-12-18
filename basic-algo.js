@@ -1,3 +1,4 @@
+// DAY 22
 function factorial(num){
   let result = 1;
   for(let i = 1; i <= num; i++){
@@ -92,4 +93,26 @@ function extractDigit(num,digitNum){
   }
   return result;
 }
+// DAY 23
+function reverse(arr){
+  let revArr = [];
+  for(let len = arr.length - 1; len >= 0; len--){
+      revArr.push(arr[len]);
+  }
+  return revArr;
+}
 
+function filterRange(arr, min, max){
+  let newArr = []
+  for(let i in arr){
+      if(arr[i] > min && arr[i] < max){
+          newArr.push(arr[i]);
+      }
+  }
+  return newArr;
+}
+
+function arrayConcat(arr1, arr2){
+  let newArr = arr1.concat(arr2);
+  return newArr;
+}
