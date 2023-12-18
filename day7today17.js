@@ -1,4 +1,4 @@
-// DAY 1
+// DAY 7
 // the more advanced than the previous one using indexOf, another function
 // return new array consists of element/s that appear only once combined the two arrays
 function diffArray(arr1, arr2) {
@@ -63,7 +63,7 @@ function destroyer2(...arr){
 }
 // console.log(destroyer1([1, 2, 3, 1, 2, 3], 2, 3)); // [ 1, 1 ]
 
-// DAY 2
+// DAY 8
 // Wherefore art thou
 function whatIsInAName(collection, source) {
     // create new array
@@ -110,7 +110,7 @@ function spinalCase(str) {
 // console.log(spinalCase("The_Andy_Griffith_Show")); // the-andy-griffith-show
 // console.log(spinalCase("AllThe-small Things")); // all-the-small-things
 
-// DAY 3
+// DAY 9
 // Pig Latin
 function translatePigLatin(str) {
     // match one or more consonant on the beginning of a string
@@ -161,7 +161,7 @@ function myReplace(str, before, after) {
 // console.log(myReplace("He is Sleeping on the couch", "Sleeping", "sitting"));
 // He is Sitting on the couch
 
-// DAY 4
+// DAY 10
 // DNA or Deoxyrebonucleic Acid
 // Pairs of DNA strands consist of nucleobase pair represented by the characters 
 // AT and CG which form building blocks of DNA double helix
@@ -217,7 +217,7 @@ function fearNotLetter(str) {
 // console.log(fearNotLetter("stvwx")); // u
 // console.log(fearNotLetter("abcdefghijklmnopqrstuvwxyz")); // undefined 
 
-// DAY 5
+// DAY 11
 // Sorted union, return an array and there should not be a duplicated element
 function uniteUnique(...arr) {
   // merge all the arrays
@@ -270,7 +270,7 @@ function convertHTML(str) {
 // console.log(convertHTML("Hamburgers < Pizza < Tacos")); // Hamburgers &lt; Pizza &lt; Tacos
 // console.log(convertHTML("<>")); // &lt;&gt;
 
-// DAY 6
+// DAY 12
 // Sum All Odd Fibonacci Numbers
 function sumFibs(num) {
   // fibonacci starts with 0 and followed by 1
@@ -329,7 +329,7 @@ function sumPrimes(num) {
 // console.log(sumPrimes(10)) // should return 17
 // console.log(sumPrimes(977)) // should return 73156
 
-// DAY 7
+// DAY 13
 // Study this again
 function smallestCommons(arr) {
   // if first elem is greater than second elem
@@ -390,7 +390,7 @@ function dropElements(arr, func) {
 
 // console.log(dropElements([0, 1, 0, 1], function(n) {return n === 1;}));
 
-// DAY 8
+// DAY 14
 // Flatten a nested array. You must account for varying levels of nesting.
 function steamrollArray(arr){
   let newArr = [];
@@ -445,7 +445,7 @@ function binaryAgent(str) {
 // console.log(binaryAgent("01001001 00100000 01101100 01101111 01110110 01100101 00100000 01000110 01110010 01100101 01100101 01000011 01101111 01100100 01100101 01000011 01100001 01101101 01110000 00100001"));
 // I love FreeCodeCamp!
 
-// DAY 9
+// DAY 15
 function truthCheck(collection, pre) {
   let boolVal = [];
  
@@ -471,7 +471,7 @@ function truthCheck(collection, pre) {
 // console.log(truthCheck([{name: "Pikachu", number: 25, caught: 3}, {name: "Togepi", number: 175, caught: 1}, {name: "MissingNo", number: NaN, caught: 0}], "number")); // it should return false
 // console.log(truthCheck([{name: "Quincy", role: "Founder", isBot: false}, {name: "Naomi", role: "", isBot: false}, {name: "Camperbot", role: "Bot", isBot: true}], "name")); // returns true
 
-// DAY 10
+// DAY 16
 // function that sums two arguments together. 
 // If only one argument is provided, then return a function.
 // If either argument isn't a valid number, return undefined.
@@ -542,7 +542,7 @@ person1.setFullName('Haskell', 'Curry');
 // console.log(person1.getFirstName()); // Haskell
 // console.log(person1.getLastName()); //Curry
 
-// DAY 11
+// DAY 17
 function orbitalPeriod(arr) {
   const GM = 398600.4418;
   const earthRadius = 6367.4447;
