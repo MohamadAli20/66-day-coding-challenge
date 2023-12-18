@@ -1,3 +1,4 @@
+// For Javascript Certification
 // Palindrom Checker
 function palindrome(str) {
     // only match letters and numbers
