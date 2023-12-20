@@ -246,3 +246,56 @@ function zipIt(arr1, arr2){
 // zipIt([1,2,3,4], [10,20,30,40 ]) to return [1,10,2,20,3,30,4,40]
 // zipIt([1], [10,20 ]) to return [1,10,20]
 // zipIt([1,2,3], [10 ]) to return [1,10,2,3]
+
+// DAY 25
+function twoDimensional(row, column){
+  let finalArr = [];
+  let rowArr = [];
+  // add element for column
+  for(let i = 0; i < column; i++){
+      // push element
+      rowArr.push(0);
+  }
+  // add element for row
+  for(let j = 0; j < row; j++){
+      // push element
+      finalArr.push(rowArr);
+  }
+  return finalArr;
+}
+// Test Cases (3/3)
+// twoDimensional(2,5) to return [[0,0,0,0,0],[0,0,0,0,0]]
+// twoDimensional(3,4) to return [[0,0,0,0],[0,0,0,0],[0,0,0,0]]
+// twoDimensional(1,5) to return [[0,0,0,0,0]]
+
+function twoDimensional(row, column){
+  let finalArr = [];
+  let rowArr = [];
+  // add row element
+  for(let i = 0; i < row; i++){
+      // add column element
+      for(let j = 0; j < column; j++){
+          // if index 0 push 1 element
+          if(i == 0 || i == row - 1){
+              rowArr.push(1);
+          }
+          // if j is index 0 and last index push 1 element
+          else if(j == 0 || j == column - 1){
+              rowArr.push(1);
+          }
+          // else push 0 element
+          else{
+              rowArr.push(0);
+          }
+      }
+      // push rowArr in finalArr
+      finalArr.push(rowArr);
+      // empty the row array
+      rowArr = [];
+  }
+  return finalArr;
+}
+// Test Cases (3/3)
+// twoDimensional(2,5) to return [[1,1,1,1,1],[1,1,1,1,1]]
+// twoDimensional(5,5) to return [[1,1,1,1,1],[1,0,0,0,1],[1,0,0,0,1],[1,0,0,0,1],[1,1,1,1,1]]
+// twoDimensional(8,8) to return [[1,1,1,1,1,1,1,1],[1,0,0,0,0,0,0,1],[1,0,0,0,0,0,0,1],[1,0,0,0,0,0,0,1],[1,0,0,0,0,0,0,1],[1,0,0,0,0,0,0,1],[1,0,0,0,0,0,0,1],[1,1,1,1,1,1,1,1]]
