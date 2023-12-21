@@ -299,3 +299,86 @@ function twoDimensional(row, column){
 // twoDimensional(2,5) to return [[1,1,1,1,1],[1,1,1,1,1]]
 // twoDimensional(5,5) to return [[1,1,1,1,1],[1,0,0,0,1],[1,0,0,0,1],[1,0,0,0,1],[1,1,1,1,1]]
 // twoDimensional(8,8) to return [[1,1,1,1,1,1,1,1],[1,0,0,0,0,0,0,1],[1,0,0,0,0,0,0,1],[1,0,0,0,0,0,0,1],[1,0,0,0,0,0,0,1],[1,0,0,0,0,0,0,1],[1,0,0,0,0,0,0,1],[1,1,1,1,1,1,1,1]]
+
+// DAY 26
+// Extract-o-matic
+function extractDigit(num,digitNum){
+  let result;
+  let placeOrder = [];
+  
+  // find the number from ones to thousands
+  if(digitNum >= 0){
+      // After decimal place
+      let afterDec = (String(num).match(/\d+/)).join(''); // get the value from ones to succeeding place
+      // create an array of place order current value after decimal
+      for(let len = afterDec.length - 1; len >= 0; len--){
+          placeOrder.push(len);
+      }
+      // find the number
+      for(let i in placeOrder){
+          // print number based on the given place order
+          // ex. if 0 equal to given digitNum then print the value
+          if(placeOrder[i] == digitNum){
+              result = afterDec[i];
+          }
+      }
+  }
+  // find number with negative place order
+  else if(digitNum < 0){
+      // Before decimal place
+      let beforeDec = (String(num).match(/\.\d+/g)).join('');
+      // remove first element or decimal sign
+      beforeDec = beforeDec.replace('.', '');
+      // create an array of place order
+      let j = -1;
+      for(let len = beforeDec.length - 1; len >= 0; len--){
+          placeOrder.push(j);
+          j -= 1
+      }
+      // find the number
+      for(let k in placeOrder){
+          // print number based on the given place order
+          // ex. if 0 equal to given digitNum then print the value
+          if(placeOrder[k] == digitNum){
+              result = beforeDec[k];
+          }
+      }
+  }
+  
+  return result;
+}
+// Test Cases (6/6)
+// extractDigit(1824, 2) to return 8
+// extractDigit(1824,0) to return 4
+// extractDigit(1234.56,-1) to return 5
+// extractDigit(199.35, 0) to return 9
+// extractDigit(199.35, -1) to return 3
+// extractDigit(199.35, -2) to return 5
+
+// Multiple Table
+function multiTable(x,y){
+  // print row
+  let num = 1; // 2
+  let sum = 1; // 2
+  let result = ""; // 1 2 3 2 4
+  for(let i = 0; i < y; i++){ // x = 3, y = 3
+      // print column
+      // sum += num; // 1
+      for(let j = 0; j < x; j++){
+          // concatenate
+          result += sum + " ";
+          // add to itself
+          sum += num; // 4 + 2
+      }
+      // increment the value of
+      num++; // 2
+      // sum equal to num
+      sum = num; // 2
+  }
+  console.log(result);
+}
+// Test Cases (4/4)
+// multiTable(2,2) to log 1 2 2 4
+// multiTable(3,3) to log 1 2 3 2 4 6 3 6 9
+// multiTable(2,4) to log 1 2 2 4 3 6 4 8
+// multiTable(5,8) to log 1 2 3 4 5 2 4 6 8 10 3 6 9 12 15 4 8 12 16 20 5 10 15 20 25 6 12 18 24 30 7 14 21 28 35 8 16 24 32 40
