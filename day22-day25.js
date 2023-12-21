@@ -408,3 +408,22 @@ function bubbleSort(arr){
 // bubbleSort([5,4,3,2,1]) to return [1,2,3,4,5]
 // bubbleSort([5, 3, 1, -1, -3]) to return [-3,-1,1,3,5]
 // bubbleSort([5, 3, 1]) to return [1,3,5]
+
+function clockHandAngles(seconds) {
+  // formulas to convert seconds into degree of hour, minute and second
+  // degree for hour
+  let hrDeg = Math.round(((seconds/3600)%12)*30);
+  // degree for minute
+  let minDeg = ((seconds%3600)/60)*6;
+  // degree for second
+  let secDeg = (seconds%60)*6;
+  // put in the array
+  let arr = [hrDeg, minDeg, secDeg];
+  return arr;
+}
+// Test Cases (5/5)
+// clockHandAngles(3600) to return [30,0,0]
+// clockHandAngles(10800) to return [90,0,0]
+// clockHandAngles(5000) to return [42,140,120]
+// clockHandAngles(8000) to return [67,80,120]
+// clockHandAngles(50000) to return [57,320,120]
