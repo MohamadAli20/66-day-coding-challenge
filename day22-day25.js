@@ -382,3 +382,29 @@ function multiTable(x,y){
 // multiTable(3,3) to log 1 2 3 2 4 6 3 6 9
 // multiTable(2,4) to log 1 2 2 4 3 6 4 8
 // multiTable(5,8) to log 1 2 3 4 5 2 4 6 8 10 3 6 9 12 15 4 8 12 16 20 5 10 15 20 25 6 12 18 24 30 7 14 21 28 35 8 16 24 32 40
+
+// Bubble Sort
+function bubbleSort(arr){
+  let len = arr.length - 1;
+  // iterate through array
+  for(let h in arr){
+      // for second element or num
+      let j = 1;
+      // iterate through array comparing the two numbers
+      for(let i = 0; i < len; i++){
+          // if the first num greater than second num then swap the position
+          if(arr[i] > arr[j]){
+              let temp = arr[i]; // temporary variable to store the current element of arr
+              arr[i] = arr[j];
+              arr[j] = temp;
+          }
+          j++;
+      }
+  }
+  return arr;
+}
+// Test Cases (4/4)
+// bubbleSort([5,3,1,2]) to return [1,2,3,5]
+// bubbleSort([5,4,3,2,1]) to return [1,2,3,4,5]
+// bubbleSort([5, 3, 1, -1, -3]) to return [-3,-1,1,3,5]
+// bubbleSort([5, 3, 1]) to return [1,3,5]
