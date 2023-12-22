@@ -1,0 +1,14 @@
+Learning Bootstrap
+
+DAY 27
+Add bootstrap to the top of HTML
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+
+                
+container-fluid - make responsive design
+img-responsive - make image mobile responsive
+text-center - center text with bootstrap
+btn - create button
+btn-default - style a button, wide as the text that they contain.
+btn-block - button will stretch to fill page's entire horizontal space and any elements following it will flow onto a "new line" below the block.
+
