@@ -12,3 +12,10 @@ btn - create button
 btn-default - style a button, wide as the text that they contain.
 btn-block - button will stretch to fill page's entire horizontal space and any elements following it will flow onto a "new line" below the block.
 
+DAY 28
+btn-primary - main color for button, color blue
+btn-info - used to call attention to optional actions that the user can take
+btn-danger - use to notify users that the button performs a destructive action
+row and column - use the Bootstrap Grid to Put Elements Side By Side
+Syntax: col-md-* - md means medium and * means number of column
+text-primary - style text with color light blue
