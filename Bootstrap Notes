@@ -20,7 +20,7 @@ row and column - use the Bootstrap Grid to Put Elements Side By Side
 Syntax: col-md-* - md means medium and * means number of column
 text-primary - style text with color light blue
 
-DAT 29 (I'm not feeling well, sakit ng ulo ko sa araw na 'to! but stil I continue to gain some bootstrap knowledge today. 24/12/2024)
+DAT 29 (I'm not feeling well, sakit ng ulo ko sa araw na 'to! but stil I continue to gain some bootstrap knowledge today. 24/12/2023)
 Add Font Awesome Icons to our Buttons:
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
