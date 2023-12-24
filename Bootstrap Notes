@@ -19,3 +19,11 @@ btn-danger - use to notify users that the button performs a destructive action
 row and column - use the Bootstrap Grid to Put Elements Side By Side
 Syntax: col-md-* - md means medium and * means number of column
 text-primary - style text with color light blue
+
+DAT 29 (I'm not feeling well, sakit ng ulo ko sa araw na 'to! but stil I continue to gain some bootstrap knowledge today. 24/12/2024)
+Add Font Awesome Icons to our Buttons:
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+<i class="fas fa-thumbs-up"></i> - add like icon
+<i class="fas fa-info-circle"></i> - add info icon
+<i class="fas fa-trash"></i> - add trash icon
