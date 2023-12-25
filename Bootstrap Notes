@@ -50,3 +50,13 @@ Line up Form Elements Responsively with Bootstrap
   <div class="col-xs-7"><input type="text" class="form-control" placeholder="cat photo URL" required></div>
   <div class="col-xs-5"><button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane"></i> Submit</button></div>
 </div>
+
+Create a Bootstrap Headline
+<div class="row">
+  <div class="col-xs-7"><input type="text" class="form-control" placeholder="cat photo URL" required></div>
+  <div class="col-xs-5"><button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane"></i> Submit</button></div>
+</div>
+
+Create Bootstrap Wells
+Bootstrap has a class called well that can create a visual sense of depth for your columns.
+<div class="well"></div>
