@@ -27,3 +27,26 @@ Add Font Awesome Icons to our Buttons:
 <i class="fas fa-thumbs-up"></i> - add like icon
 <i class="fas fa-info-circle"></i> - add info icon
 <i class="fas fa-trash"></i> - add trash icon
+
+DAY 30
+Responsively Style Radio Buttons
+<div class="row">
+  <div class="col-xs-6"><label><input type="radio" name="indoor-outdoor"> Indoor</label></div>
+  <div class="col-xs-6"><label><input type="radio" name="indoor-outdoor"> Outdoor</label></div>
+</div>
+
+Responsively Style Checkboxes
+<div class="row">
+  <div class="col-xs-4"><label><input type="checkbox" name="personality"> Loving</label></div>
+  <div class="col-xs-4"><label><input type="checkbox" name="personality"> Lazy</label></div>
+  <div class="col-xs-4"><label><input type="checkbox" name="personality"> Crazy</label></div>
+</div>
+
+Give your form's text input field
+<input class="form-control" type="text" placeholder="cat photo URL" required>
+
+Line up Form Elements Responsively with Bootstrap
+<div class="row">
+  <div class="col-xs-7"><input type="text" class="form-control" placeholder="cat photo URL" required></div>
+  <div class="col-xs-5"><button type="submit" class="btn btn-primary"><i class="fa fa-paper-plane"></i> Submit</button></div>
+</div>
