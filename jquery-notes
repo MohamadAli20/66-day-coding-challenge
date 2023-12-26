@@ -1,5 +1,33 @@
+DAY 30
 jQuery
 jQuery is one of the most widely used JavaScript libraries in the world.
 In 2006 when it was released, all major browsers handled JavaScript slightly differently. 
 jQuery simplified the process of writing client-side JavaScript, and also ensured that your code worked the same way in all browsers.
 In this course, you'll learn how to use jQuery to select, remove, clone, and modify different elements on the page.
+
+DAY 31
+Learn How Script Tags and Document Ready Work
+$(document).ready() function, which is a jQuery method that waits for the HTML document to be fully loaded and ready before executing 
+the code inside the function.
+
+<script>
+  $(document).ready(function() {
+    // Code inside this block will be executed when the document is fully loaded.
+    // You can include your JavaScript/jQuery code here.
+  });
+</script>
+This structure is commonly used to ensure that your JavaScript/jQuery code runs only after the HTML document has been completely loaded.
+It helps prevent issues where your script tries to interact with elements on the page that haven't been rendered yet.
+
+Target HTML Elements with Selectors Using jQuery
+All jQuery functions start with a $, usually referred to as a dollar sign operator, or as bling.
+jQuery often selects an HTML element with a selector, then does something to that element.
+For example, let's make all of your button elements bounce. Just add this code inside your document ready function:
+$("button").addClass("animated bounce");
+We selected them with $("button"), then we added some CSS classes to them with .addClass("animated bounce");.
+
+Target Elements by Class Using jQuery
+target your div elements with the class well by using the $(".well") selector then use jQuery's .addClass() function to add the classes 
+animated and shake
+$(".well").addClass("animated shake");
+
