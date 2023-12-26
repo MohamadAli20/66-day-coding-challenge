@@ -31,3 +31,11 @@ target your div elements with the class well by using the $(".well") selector th
 animated and shake
 $(".well").addClass("animated shake");
 
+Target Elements by id Using jQuery
+target your button element with the id target3 by using the $("#target3")
+$("#target3").addClass("animated fadeOut");
+
+Remove Classes from an Element with jQuery
+jQuery's removeClass() function
+Let's remove the btn-default class from all of our button elements
+$("button").removeClass("btn-default");
