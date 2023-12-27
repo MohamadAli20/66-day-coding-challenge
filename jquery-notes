@@ -6,7 +6,7 @@ jQuery simplified the process of writing client-side JavaScript, and also ensure
 In this course, you'll learn how to use jQuery to select, remove, clone, and modify different elements on the page.
 
 DAY 31
-Learn How Script Tags and Document Ready Work
+Learn How Script Tags and Document Ready Work - .ready()
 $(document).ready() function, which is a jQuery method that waits for the HTML document to be fully loaded and ready before executing 
 the code inside the function.
 
@@ -26,16 +26,34 @@ For example, let's make all of your button elements bounce. Just add this code i
 $("button").addClass("animated bounce");
 We selected them with $("button"), then we added some CSS classes to them with .addClass("animated bounce");.
 
-Target Elements by Class Using jQuery
+Target Elements by Class Using jQuery - $(".className")
 target your div elements with the class well by using the $(".well") selector then use jQuery's .addClass() function to add the classes 
 animated and shake
 $(".well").addClass("animated shake");
 
-Target Elements by id Using jQuery
+Target Elements by id Using jQuery - $("#id")
 target your button element with the id target3 by using the $("#target3")
 $("#target3").addClass("animated fadeOut");
 
-Remove Classes from an Element with jQuery
+Remove Classes from an Element with jQuery - .removeClass()
 jQuery's removeClass() function
 Let's remove the btn-default class from all of our button elements
 $("button").removeClass("btn-default");
+
+DAY 32
+Change the CSS of an Element Using jQuerY - .css()
+We can also change the CSS of an HTML element directly with jQuery.
+jQuery has a function called .css() that allows you to change the CSS of an element.
+$("#target1").css("color", "blue");
+
+Disable an Element Using jQuery - .prop()
+You can also change the non-CSS properties of HTML elements with jQuery. For example, you can disable buttons.
+When you disable a button, it will become grayed-out and can no longer be clicked.
+jQuery has a function called .prop() that allows you to adjust the properties of elements.
+$("button").prop("disabled", true);
+
+Change Text Inside an Element Using jQuery - .html()
+Using jQuery, you can change the text between the start and end tags of an element. You can even change HTML markup.
+jQuery has a function called .html() that lets you add HTML tags and text within an element. Any content previously within the element 
+will be completely replaced with the content you provide using this function.
+$("h3").html("<em>jQuery Playground</em>");
