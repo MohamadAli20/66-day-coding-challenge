@@ -1,1 +1,6 @@
-#Javascript #Bootstrap #jQuery #SASS
+Technologies Used:
+- JavaScript
+- Bootstrap
+- jQuery
+- SASS
+
