@@ -4,3 +4,9 @@ Technologies Used:
 - jQuery
 - SASS
 
+// Example using React
+import React from 'react';
+
+function MyComponent() {
+  // ...
+}
