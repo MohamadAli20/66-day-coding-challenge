@@ -103,3 +103,15 @@ target class or element type.
 Here's how you would give the third element in each well the bounce class:
 $(".target:nth-child(3)").addClass("animated bounce");
 
+DAY 33
+Target Even Elements Using jQuery
+You can also target elements based on their positions using :odd or :even selectors.
+Note that jQuery is zero-indexed which means the first element in a selection has a position of 0. This can be a little confusing as, 
+counter-intuitively, :odd selects the second element (position 1), fourth element (position 3), and so on.
+$(".target:odd").addClass("animated shake");
+
+Use jQuery to Modify the Entire Page
+We're done playing with our jQuery playground. Let's tear it down!
+jQuery can target the body element as well.
+Here's how we would make the entire body fade out: 
+$("body").addClass("animated fadeOut");
