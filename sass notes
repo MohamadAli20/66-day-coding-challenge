@@ -1,10 +1,10 @@
 DAY 33
-SASS
+#SASS
 Sass, or "Syntactically Awesome StyleSheets", is a language extension of CSS. It adds features that aren't available in basic CSS, which make it easier for you to simplify and maintain the 
 style sheets for your projects.
 In this Sass course, you'll learn how to store data in variables, nest CSS, create reusable styles with mixins, add logic and loops to your styles, and more.
 
-Store Data with Sass Variables
+#Store Data with Sass Variables
 One feature of Sass that's different than CSS is it uses variables. They are declared and set to store data, similar to JavaScript.
 In JavaScript, variables are defined using the let and const keywords. In Sass, variables start with a $ followed by the variable name.
 
@@ -20,7 +20,7 @@ h1 {
   color: $headings-color;
 }
 
-Nest CSS with Sass
+#Nest CSS with Sass
 Sass allows nesting of CSS rules, which is a useful way of organizing a style sheet.
 Normally, each element is targeted on a different line to style it, like so:
 
@@ -48,5 +48,57 @@ article {
 
   ul {
     color: blue;
+  }
+}
+
+#Create Reusable CSS with Mixins
+In Sass, a mixin is a group of CSS declarations that can be reused throughout the style sheet.
+Newer CSS features take time before they are fully adopted and ready to use in all browsers. As features are added to browsers, CSS rules using them may need vendor prefixes. 
+Consider box-shadow:
+
+div {
+  -webkit-box-shadow: 0px 0px 4px #fff;
+  -moz-box-shadow: 0px 0px 4px #fff;
+  -ms-box-shadow: 0px 0px 4px #fff;
+  box-shadow: 0px 0px 4px #fff;
+}
+It's a lot of typing to re-write this rule for all the elements that have a box-shadow, or to change each value to test different effects. Mixins are like functions for CSS. 
+Here is how to write one:
+
+@mixin box-shadow($x, $y, $blur, $c){ 
+  -webkit-box-shadow: $x $y $blur $c;
+  -moz-box-shadow: $x $y $blur $c;
+  -ms-box-shadow: $x $y $blur $c;
+  box-shadow: $x $y $blur $c;
+}
+The definition starts with @mixin followed by a custom name. The parameters (the $x, $y, $blur, and $c in the example above) are optional. Now any time a box-shadow rule is needed, 
+only a single line calling the mixin replaces having to type all the vendor prefixes. A mixin is called with the @include directive:
+
+div {
+  @include box-shadow(0px, 0px, 4px, #fff);
+}
+
+#Use @if and @else to Add Logic To Your Styles
+The @if directive in Sass is useful to test for a specific case - it works just like the if statement in JavaScript.
+
+@mixin make-bold($bool) {
+  @if $bool == true {
+    font-weight: bold;
+  }
+}
+And just like in JavaScript, the @else if and @else directives test for more conditions:
+
+@mixin text-effect($val) {
+  @if $val == danger {
+    color: red;
+  }
+  @else if $val == alert {
+    color: yellow;
+  }
+  @else if $val == success {
+    color: green;
+  }
+  @else {
+    color: black;
   }
 }
