@@ -1,16 +1,14 @@
 Technologies Used:
 - JavaScript
-- Bootstrap
-- jQuery
-- SASS
-- 
 ```javascript
 function test() {
   console.log("Hello World!");
 }
 ```
-
-```html
+- Bootstrap
+- jQuery
+- SASS
+```scss
 <style type='text/scss'>
   @for $j from 1 through 6{
     .text-#{$j} {
