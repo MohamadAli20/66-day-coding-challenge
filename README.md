@@ -10,14 +10,13 @@ function test() {
 }
 ```
 
+```html
 <style type='text/scss'>
   @for $j from 1 through 6{
     .text-#{$j} {
       font-size: 15px*$j;
     }
   }
-
-```html
 </style>
 
 <p class="text-1">Hello</p>
