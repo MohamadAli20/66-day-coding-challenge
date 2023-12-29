@@ -3,8 +3,26 @@ Technologies Used:
 - Bootstrap
 - jQuery
 - SASS
+- 
 ```javascript
 function test() {
-  console.log("notice the blank line before this function?");
+  console.log("Hello World!");
 }
+```
+
+<style type='text/scss'>
+  @for $j from 1 through 6{
+    .text-#{$j} {
+      font-size: 15px*$j;
+    }
+  }
+
+```scss
+</style>
+
+<p class="text-1">Hello</p>
+<p class="text-2">Hello</p>
+<p class="text-3">Hello</p>
+<p class="text-4">Hello</p>
+<p class="text-5">Hello</p>
 ```
