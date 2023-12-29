@@ -17,7 +17,7 @@ function test() {
     }
   }
 
-```scss
+```html
 </style>
 
 <p class="text-1">Hello</p>
