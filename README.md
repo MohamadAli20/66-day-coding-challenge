@@ -7,6 +7,14 @@ function test() {
 ```
 - Bootstrap
 - jQuery
+```jquery
+<script>
+  $(document).ready(function() {
+    // Code inside this block will be executed when the document is fully loaded.
+    // You can include your JavaScript/jQuery code here.
+  });
+</script>
+```
 - SASS
 ```scss
 <style type='text/scss'>
