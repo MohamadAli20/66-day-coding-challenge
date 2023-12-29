@@ -103,7 +103,7 @@ And just like in JavaScript, the @else if and @else directives test for more con
   }
 }
 
-DAY 34 - Baliw ka talaga!
+DAY 34
 Use @for to Create a Sass Loop
 The @for directive adds styles in a loop, very similar to a for loop in JavaScript.
 
@@ -132,3 +132,9 @@ this:
   width: 100%;
 }
 This is a powerful way to create a grid layout. Now you have twelve options for column widths available as CSS classes.
+
+```
+function test() {
+  console.log("notice the blank line before this function?");
+}
+```
