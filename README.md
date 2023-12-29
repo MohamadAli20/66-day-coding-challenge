@@ -7,7 +7,7 @@ function test() {
 ```
 - Bootstrap
 - jQuery
-```jquery
+```javascript
 <script>
   $(document).ready(function() {
     // Code inside this block will be executed when the document is fully loaded.
