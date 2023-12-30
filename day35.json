@@ -1,0 +1,20 @@
+{
+  "name": "fcc-learn-npm-package-json",
+  "author": "foobar",
+	"dependencies": {
+    "@freecodecamp/example": "^1.2.13",
+		"express": "^4.14.0"
+	},
+	"main": "server.js",
+	"scripts": {
+		"start": "node server.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://idontknow/todo.git"
+	},
+  "description": "A project that does something awesome",
+  "keywords": [ "descriptive", "related", "words" , "freecodecamp"],
+  "license": "MIT",
+  "version": "1.2.0"
+}
