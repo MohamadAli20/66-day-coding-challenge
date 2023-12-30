@@ -1,0 +1,69 @@
+Managing Packages with NPM
+npm (Node Package Manager), is a command line tool TO INSTALL, CREATE, and SHARE PACKAGES of JavaScript code written for Node.js. 
+There are many open source packages available on npm, so before starting a project, take some time to explore so you don't end up recreating the wheel for things like working with dates or 
+fetching data from an API.
+
+#How to Use package.json, the Core of Any Node.js Project or npm Package
+- package.json file is the center of any Node.js project or npm package
+- all npm packages are defined in files called package.json.
+- consists of a single JSON object where information is stored in key-value pairs
+- two required fields; NAME and VERSION, but it’s good practice to provide additional information about your project that could be useful to future users or maintainers
+Example:
+
+{
+  "name": "fcc-learn-npm-package-json",
+  "version": "1.2.0",
+  "description": "A project that does something awesome",
+  "main" : "foo.js",
+  "keywords": [ "descriptive", "related", "words" ],
+  "author" : "John Doe",
+  "license": "MIT"
+}
+
+- name: required field
+- version: required field
+- description field: short, but informative description about the project
+- keywords field: describe the project using related keywords
+- license field: inform users of what they are allowed to do with the project, some common licenses for open source projects include MIT and BSD.
+
+#Expand Your Project with External Packages from npm
+- **Package Manager Significance: Vital for robust dependency management.
+- **Dependency Management Advantage: Eliminates manual effort in obtaining dependencies.
+- **npm's Automatic Installation: Automatically installs all project dependencies.
+- **Dependencies Section in package.json: Essential for specifying project requirements.
+- **Efficient Project Setup: Simplifies project setup on new computers.
+- **Dependency Blueprint: npm relies on package.json to determine project needs.
+
+"dependencies": {
+    "@freecodecamp/example": "1.0.0",
+		"express": "^4.14.0"
+}
+
+#Manage npm Dependencies By Understanding Semantic Versioning
+- **Semantic Versioning (SemVer):** Industry standard for software versioning.
+- **Dependency Management:** Versions in package.json dependencies follow SemVer.
+- **SemVer Format:** "MAJOR.MINOR.PATCH"
+- **MAJOR Version:** Increment for incompatible API changes.
+- **MINOR Version:** Increment for backwards-compatible feature additions.
+- **PATCH Version:** Increment for backwards-compatible bug fixes.
+- **Understanding SemVer:** Crucial for avoiding accidental breaking changes in projects.
+- **Benefit:** Helps communicate expected changes when updating dependencies.
+- **Usefulness:** Especially important when using external dependencies in software development.
+
+"dependencies": {
+  "@freecodecamp/example": "1.2.13",
+  "express": "^4.14.0"
+}
+
+#Use the Tilde-Character to Always Use the Latest Patch Version of a Dependency
+- **Tilde (~) for Latest Patch Version: Use tilde (~) prefix in the version to always get the latest PATCH updates.
+- **Freezing Dependencies: Specific version ensures compatibility but may miss bug fixes.
+- **Security and Bug Fixes: Tilde allows updates for bug fixes and security patches.
+- **Example: `"package": "~1.3.8"` permits updates to any 1.3.x version.
+
+#Use the Caret-Character to Use the Latest Minor Version of a Dependency
+- **Caret (^) for Latest Minor Version: Use caret (^) prefix in the version to get the latest MINOR and PATCH updates.
+- **Difference from Tilde (~): Caret allows both MINOR and PATCH updates.
+- **Example: `"package": "^1.3.8"` permits updates to any 1.x.x version.
+- **Versatility: Allows flexibility for future updates within the same major version.
+- **Use Case: Useful when you want the latest features and bug fixes without breaking changes.
