@@ -1,0 +1,76 @@
+DAY 36
+Basic Node and Express
+1. **Node.js Overview:**
+   - JavaScript runtime for server-side development.
+   - Allows developers to write backend programs in JavaScript.
+
+2. **Core Node.js Modules:**
+   - HTTP: Acts as a server.
+   - File System: Enables reading and modifying files.
+
+3. **npm (Node Package Manager):**
+   - Used for installing and managing packages.
+   - Packages are collections of smaller modules.
+
+4. **Express Framework:**
+   - Lightweight web application framework.
+   - Among the most popular npm packages.
+   - Facilitates server creation and handling routing.
+
+5. **Routing with Express:**
+   - Simplifies directing users to specific endpoints (e.g., /blog).
+   - Eases the handling of different requests from the browser.
+
+6. **Course Objectives:**
+   - Learn basics of Node.js and Express.
+   - Create a server.
+   - Serve various files.
+   - Handle different browser requests.
+
+#Start a Working Express Server
+1. **Express App Initialization:**
+   - Use the following code to create an Express app object in myApp.js:
+     ```javascript
+     const express = require('express');
+     const app = express();
+     ```
+
+2. **Listening to Port:**
+   - Set up the server to listen on a specific port using `app.listen(port)` method.
+     ```javascript
+     app.listen(3000); // Example port, change as needed
+     ```
+
+3. **Defining Routes:**
+   - Express routes have the structure `app.METHOD(PATH, HANDLER)`.
+     - `METHOD`: HTTP method in lowercase.
+     - `PATH`: Relative path on the server.
+     - `HANDLER`: Function called when the route is matched.
+
+4. **Example Route Handler:**
+   - Define a route with a handler function:
+     ```javascript
+     app.get('/', function(req, res) {
+       res.send('Response String');
+     });
+     ```
+   - This example serves the string 'Response String' when the root path ('/') is accessed using the GET method.
+
+5. **Handler Function Parameters:**
+   - Handlers take the form `function(req, res) {...}`.
+     - `req`: Request object.
+     - `res`: Response object.
+
+6. **Putting It All Together:**
+   - Your myApp.js file could look like this:
+     ```javascript
+     const express = require('express');
+     const app = express();
+
+     app.get('/', function(req, res) {
+       res.send('Response String');
+     });
+
+     app.listen(3000); // Example port, change as needed
+     ```
+   - This sets up a basic Express app, defines a route for the root path, and serves a response string when accessed.
