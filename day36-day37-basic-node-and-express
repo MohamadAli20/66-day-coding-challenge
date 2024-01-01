@@ -1,5 +1,5 @@
 DAY 36
-Basic Node and Express
+#Basic Node and Express
 1. **Node.js Overview:**
    - JavaScript runtime for server-side development.
    - Allows developers to write backend programs in JavaScript.
@@ -74,3 +74,36 @@ Basic Node and Express
      app.listen(3000); // Example port, change as needed
      ```
    - This sets up a basic Express app, defines a route for the root path, and serves a response string when accessed.
+
+DAY 37
+#Serve an HTML File
+- Use `res.sendFile(path)` method to respond to requests with a file.
+- Place it inside the `app.get('/', ...)` route handler.
+- `res.sendFile(path)` sets headers and sends the file based on its type.
+- Use `__dirname` to calculate the absolute file path.
+
+**Example:**
+```javascript
+app.get('/', function(req, res) {
+  const absolutePath = __dirname + '/relativePath/index.html';
+  res.sendFile(absolutePath);
+});
+```
+
+#Serve Static Assets with Express
+- Use `express.static(path)` middleware to handle static assets (e.g., stylesheets, scripts, images).
+- `path` parameter is the absolute path of the folder containing the assets.
+
+**Implementation:**
+```javascript
+// Specify the folder containing static assets
+const assetsPath = __dirname + '/public';
+
+// Use express.static middleware to serve static assets
+app.use(express.static(assetsPath));
+```
+
+- In this example, the `public` folder contains static assets like stylesheets, scripts, and images.
+- The `express.static` middleware is mounted using `app.use(path, middlewareFunction)`.
+- Requests for static assets are automatically handled by Express without the need for explicit route handlers.
+- Adjust the `assetsPath` according to your project structure.
