@@ -107,3 +107,37 @@ app.use(express.static(assetsPath));
 - The `express.static` middleware is mounted using `app.use(path, middlewareFunction)`.
 - Requests for static assets are automatically handled by Express without the need for explicit route handlers.
 - Adjust the `assetsPath` according to your project structure.
+
+DAY 38
+1. **REST API Purpose:**
+   - An API serves data, and a REST API facilitates data exchange without the need for clients to understand server details.
+
+2. **Resource Access:**
+   - Clients only need to know the resource's location (URL) and the action to perform (verb), such as using the GET verb for fetching information without modification.
+
+3. **Data Format:**
+   - JSON (JavaScript Object Notation) is the preferred format for moving information on the web, representing JavaScript objects as strings for easy transmission.
+
+4. **Creating a Simple API Route:**
+   - Use the `app.get()` method to create a route that responds with JSON.
+   - Example: `app.get('/json', function(req, res) { /* route handler here */ });`
+
+5. **Handling JSON Response:**
+   - Inside the route handler, use `res.json()` method, passing in an object as an argument.
+   - This method converts the JavaScript object into a string, sets appropriate headers indicating JSON, and sends the data back.
+
+6. **Valid JavaScript Object:**
+   - A valid object structure is `{key: data}`, where data can be a number, string, nested object, array, variable, or the result of a function call.
+
+7. **Example Response:**
+   - Serve the object `{"message": "Hello json"}` in JSON format as a response to GET requests to the `/json` route.
+
+8. **Testing:**
+   - Access the route through your browser by navigating to `your-app-url/json` to see the displayed message.
+
+Example:
+app.get('/json', function(req, res) {
+  res.json({"message": "Hello json"});
+});
+
+Note: Access the ouput in http://localhost:3000/json
