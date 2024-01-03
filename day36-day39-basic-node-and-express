@@ -141,3 +141,26 @@ app.get('/json', function(req, res) {
 });
 
 Note: Access the ouput in http://localhost:3000/json
+
+DAY 39
+#Use the .env File
+1. Purpose of .env File:
+Used for passing environment variables to your application.
+Keeps sensitive data, like API keys or database URIs, private and hidden.
+
+2. Accessibility of Environment Variables:
+Accessed in the app as process.env.VAR_NAME.
+Variables are passed as strings.
+
+3. Conventions for .env Variables:
+Variable names are in uppercase.
+Words are separated by underscores.
+
+4. File Format and Syntax:
+.env is a shell file, no need to wrap names or values in quotes.
+No spaces around the equals sign when assigning values.
+
+5. Configuration Options:
+Enables storing configuration options.
+Allows changing application behavior without rewriting code.
+
