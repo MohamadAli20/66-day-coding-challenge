@@ -164,3 +164,36 @@ No spaces around the equals sign when assigning values.
 Enables storing configuration options.
 Allows changing application behavior without rewriting code.
 
+DAY 40
+#Implement a Root-Level Request Logger Middleware
+1. Middleware Function Structure:
+- Middleware functions take three arguments: req (request object), res (response object), and 
+next (the next function in the application's request-response cycle).
+Example:
+```
+function(req, res, next) {
+  console.log("I'm a middleware...");
+  next();
+}
+```
+
+2. Middleware Execution and Side Effects:
+- Middleware functions execute code that can have side effects on the application.
+- They can add information to the request or response objects.
+
+3. Ending the Request-Response Cycle:
+- Middleware functions can end the cycle by sending a response when a certain condition is met.
+
+4. Calling the Next Middleware:
+- If a middleware function doesn't send a response, it triggers the execution of the next function in the stack by calling next().
+
+5. Example Scenario:
+- If you mount a middleware function on a route using app.use(<middleware-function>), it will be executed for all requests.
+- If the middleware function is mounted on a specific route, it displays a string ("I'm a middleware...") and 
+then executes the next function in the stack.
+
+6. Root-Level Middleware:
+- Root-level middleware is mounted at the root level of the application using app.use(<middleware-function>).
+- It is executed for all incoming requests.
+- Specific conditions can be set for execution using methods like app.post(<middleware-function>) for POST requests, 
+with analogous methods for other HTTP verbs.
