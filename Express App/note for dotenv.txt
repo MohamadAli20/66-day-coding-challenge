@@ -1,0 +1,3 @@
+Install 'dotenv' using npm, withour 'dotenv' the .env file cannot be read.
+
+When the 'dotenv' is installed, the 'node_modules' folder is imported or created.
