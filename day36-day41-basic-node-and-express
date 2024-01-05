@@ -197,3 +197,30 @@ then executes the next function in the stack.
 - It is executed for all incoming requests.
 - Specific conditions can be set for execution using methods like app.post(<middleware-function>) for POST requests, 
 with analogous methods for other HTTP verbs.
+
+DAY 41
+Chain Middleware to Create a Time Server
+```javascript
+app.get("/now", function(req, res, next){
+  req.time = new Date().toString();
+  next();
+},function(req, res, next){
+  res.send({time: req.time});
+});
+```
+1. Route Definition:
+- app.get("/now", ...) defines a route for handling HTTP GET requests at the path "/now".
+
+2. First Middleware Function:
+- The first middleware function (function(req, res, next) {...}) is associated with the "/now" route. 
+It sets the current time (formatted as a string) in the req.time property.
+It then calls next() to pass control to the next middleware or route handler.
+
+3. Second Middleware Function (Route Handler):
+- The second middleware function (function(req, res, next) {...}) is also associated with the "/now" route.
+- It sends a JSON response containing the time stored in req.time as {time: req.time}.
+
+4. Middleware Chaining:
+- The two middleware functions are chained together for the "/now" route. The first one sets the time, and the second one sends the response.
+- Response Format:
+- The response sent by the second middleware is a JSON object: {time: req.time}.
