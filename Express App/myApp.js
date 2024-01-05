@@ -16,12 +16,26 @@ const PORT = process.env.PORT || 3000;
 //
 //   res.json(responseObj);
 // });
+// See the output here: http://localhost:3000/json
+// Output: {"message":"HELLO WORLD"}
 
 // Root-Level Request Logger Middleware
-app.use((req, res, next) => {
-  console.log(`${req.method} ${req.path} - ${req.ip}`);
-  next();
-});
+// app.use((req, res, next) => {
+//   console.log(`${req.method} ${req.path} - ${req.ip}`);
+//   next();
+// });
+// Output is displayed in the console
+// Output: GET /json - ::1
+
+// Chain Middleware
+// app.get("/now", function(req, res, next){
+//   req.time = new Date().toString();
+//   next();
+// },function(req, res, next){
+//   res.send({time: req.time});
+// });
+// See the output here: http://localhost:3000/now
+// Output: {"time":"Thu Jan 04 2024 23:06:22 GMT+0800 (Taipei Standard Time)"}
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
