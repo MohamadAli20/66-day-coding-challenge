@@ -34,4 +34,11 @@ app.listen(PORT, () => {
 5. Run Express app
 In the same terminal, type `npm test`
 
-5. Visit http://localhost:3000 (or the specified port) in your web browser to see your Express app in action.
+6. Visit http://localhost:3000 (or the specified port) in your web browser to see your Express app in action.
+
+What is ROOT-LEVEL REQUEST LOGGER MIDDLEWARE?
+A "root-level request logger middleware" acts like a checkpoint at the entrance of a road. When a car (request) enters, 
+this special checkpoint, known as a "logger," takes note of important information about the car. 
+It records details such as the type of car (GET, POST, etc.), the road it's taking (route), and the license plate of the driver 
+(IP address). Just like a security log keeps track of who's coming in and out, a logger helps developers monitor and understand the 
+flow of activity in their web application by creating a record of each request.
