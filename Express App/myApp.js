@@ -37,6 +37,12 @@ const PORT = process.env.PORT || 3000;
 // See the output here: http://localhost:3000/now
 // Output: {"time":"Thu Jan 04 2024 23:06:22 GMT+0800 (Taipei Standard Time)"}
 
+// DAY 42
+// Define the route for /:word/echo
+app.get('/:word/echo', (req, res) => {
+  const { word } = req.params;
+  res.json({ echo: word });
+});
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
