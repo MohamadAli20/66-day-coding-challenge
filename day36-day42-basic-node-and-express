@@ -224,3 +224,24 @@ It then calls next() to pass control to the next middleware or route handler.
 - The two middleware functions are chained together for the "/now" route. The first one sets the time, and the second one sends the response.
 - Response Format:
 - The response sent by the second middleware is a JSON object: {time: req.time}.
+
+DAY 42
+#Get Route Parameter Input from the Client
+1. Route Parameters:
+- Route parameters are named segments of the URL, delimited by slashes (/).
+- Each segment captures the value of the part of the URL which matches its position.
+- Captured values are available in the req.params object.
+
+2. Route Definition:
+- Define a route for /:word/echo, where :word is a route parameter.
+- Use app.get('/:word/echo', ...) to handle GET requests to this route.
+
+3. Accessing Route Parameter:
+- Access the value of the :word parameter using req.params.word.
+
+4. JSON Response:
+- Respond with a JSON object using res.json({ echo: word }).
+
+5. Testing in Browser:
+- Test the route by visiting a matching URL in your browser's address bar.
+- For example, http://localhost:3000/freecodecamp/echo.
